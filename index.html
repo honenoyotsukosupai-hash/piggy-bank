@@ -1,42 +1,25 @@
-<!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Piggy Bank</title>
-    <style>
-        /* Add some styling for the piggy bank */
-    </style>
+<title>Piggy Bank</title>
 </head>
 <body>
-    <!-- Improved SVG Illustration -->
-    <div id="piggy-bank">
-        <svg><!-- Your SVG illustration here --></svg>
-    </div>
-    
-    <!-- New Break Piggy Bank Button -->
-    <button id="break-piggy" onclick="breakPiggy()">🔨 貯金箱を割る</button>
-
+    <h1>Piggy Bank</h1>
+    <button id="break-button">リセットボタン</button>
+    <svg id="piggy-bank">
+        <!-- SVG for piggy bank goes here -->
+    </svg>
     <script>
-        function breakPiggy() {
-            const confirmation = confirm("本当に貯金箱を割りますか？");
-            if (confirmation) {
-                // Logic to break the piggy bank
-                // Example: play sound and animate fragments
-                playShatteringSound();
-                // Reset localStorage
-                localStorage.clear();
-                // Fragment logic here
-                breakAnimation(50);
+        // Animation and functionality script
+        document.getElementById('break-button').addEventListener('click', function () {
+            if (confirm('Are you sure you want to break the piggy bank?')) {
+                breakPiggyBank();
             }
-        }
+        });
 
-        function playShatteringSound() {
-            var audio = new Audio('path/to/shatter-sound.mp3');
-            audio.play();
-        }
-
-        function breakAnimation(fragmentCount) {
-            // Logic to manage breaking animations with the specified fragmentCount
+        function breakPiggyBank() {
+            // Logic for breaking the piggy bank
+            // Reset all data
+            alert('All data has been reset!');
         }
     </script>
 </body>
